@@ -1,0 +1,303 @@
+.about__container {
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+    cursor: default;
+}
+
+
+
+
+.about__me {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        var(--color-primary),
+        transparent
+    );
+    display: grid;
+    place-items: center;
+}
+
+.about__me-image {
+    border-radius: 2rem;
+    overflow: hidden;
+    transform : rotate(10deg);
+    transition: var(--transition );
+}
+.about__me-image:hover {
+    transform: rotate(0);
+}
+
+/* .about__cards {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+} */
+.about__cards{
+    grid-column: 1 / 3;   /* ⭐ span BOTH columns */
+    grid-row: 2;          /* ⭐ go below image + text */
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: -2rem;
+    margin-bottom: 6rem;
+}
+
+
+.about__content .btn{
+    margin-top: 0.5rem;
+}
+
+
+
+
+.about__card {
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+
+}
+.about__card:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+
+}
+
+.about__icon {
+    color: var(--color-primary);
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+
+}
+.about__card h5 {
+    font-size: 1rem;
+
+}
+.about__card small {
+    font-size: 0.9rem;
+    color: var(--color-light);
+}
+
+.about__content p {
+     margin: 0.8rem 0 1rem;
+    text-align: justify;
+    color: var(--color-light );
+}
+
+
+/* ===== EDUCATION MODAL ===== */
+
+.edu__modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.edu__modal-content{
+  background: var(--color-bg-variant);
+  padding: 3rem;
+  border-radius: 2rem;
+  width: 600px;
+  max-width: 90%;
+  position: relative;
+  text-align: center;
+}
+
+.edu__modal-content h2{
+  margin-bottom: 2rem;
+}
+
+.edu__item{
+  margin-bottom: 1.5rem;
+}
+
+.edu__item h3{
+  color: var(--color-primary);
+}
+
+.edu__close{
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.edu__item{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+}
+
+.edu__logo{
+  width: 65px;
+  height: 55px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  background: white;
+  padding: 5px;
+}
+.edu__item:hover{
+  transform: translateY(-4px);
+  transition: 0.4s;
+}
+
+.cgpa{
+  color: var(--color-primary);
+  font-weight: 600;
+  background: rgba(124, 6, 6, 0.21);
+  padding: 4px 10px;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.college__name{
+  display: block;
+  color: var(--color-light);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.college__name:hover{
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+
+
+
+/* -------------- MEDIA QUERISE (MEDIUM DEVICDES) --------------- */
+
+@media screen and (max-width: 1024px) {
+
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* image center */
+  .about__me {
+    width: 55%;
+    margin: 2rem auto 3rem;
+  }
+
+  /* text full width */
+  .about__content {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+  }
+
+  .about__content p {
+    margin: 1rem 0 1.5rem;
+    text-align: justify;
+  }
+
+  /* button center */
+  .about__content .btn {
+    display: block;
+    width: max-content;
+    margin: 1.5rem auto 0;
+  }
+
+  /* cards full width below */
+  .about__cards {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2.5rem;
+  }
+}
+
+
+/* -------------- SMALL QUERISE (MEDIUM DEVICDES) --------------- */
+/* 📱 MOBILE FIX */
+@media screen and (max-width: 600px) {
+
+  /* stack everything vertically */
+  .about__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* image center + proper size */
+  .about__me{
+    width: 75%;
+    margin: 1.5rem auto 2rem;
+  }
+
+  /* TEXT SECTION ⭐ main fix */
+  .about__content{
+    width: 92%;
+    max-width: 420px;        /* readable width */
+    margin: 0 auto;
+    text-align: left;        /* stop ugly justify */
+  }
+
+  .about__content p{
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0.8rem 0;
+    text-align: left;        /* VERY IMPORTANT */
+  }
+
+  /* button center */
+  .about__content .btn{
+    display: block;
+    width: fit-content;
+    margin: 1.2rem auto 1.5rem;
+  }
+
+  /* cards 1 per row */
+  .about__cards{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 92%;
+    margin: 0 auto;
+  }
+
+}
+
+
+
+
+@keyframes cardExpand{
+  from{
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes cardClose{
+  from{
+    transform: scale(1);
+    opacity: 1;
+  }
+  to{
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}

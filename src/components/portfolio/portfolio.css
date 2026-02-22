@@ -1,0 +1,97 @@
+.portfolio__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    cursor: default;
+}
+
+.portfolio__item {
+    background: var(--color-bg-variant);
+    padding: 1.2rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+.portfolio__item:hover {
+    border-color: var(--color-primary-variant);
+    background: transparent;
+}
+/* ===== FIX PROJECT IMAGE SIZE ===== */
+.portfolio__item-image{
+    border-radius: 1.5rem;
+    overflow: hidden;
+    height: 180px;              /* SAME HEIGHT FOR ALL CARDS */
+    background: #0f0f1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* force image to fill frame nicely */
+.portfolio__item-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* THIS IS THE MAGIC */
+    transition: 0.4s;
+}
+
+.portfolio__item h3 {
+    margin: 1.2rem 0 2rem;
+}
+
+.portfolio__item-cta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
+/* description text */
+.portfolio__desc{
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+/* image hover zoom */
+.portfolio__item-image img{
+    transition: 0.4s;
+}
+
+.portfolio__item:hover .portfolio__item-image img{
+    transform: scale(1.08);
+}
+
+/* lift card on hover */
+.portfolio__item:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.portfolio__item:hover p {
+    color: var(--color-white);
+}
+
+
+
+
+
+/* -------------- MEDIA QUERISE (MEDIUM DEVICDES) --------------- */
+@media screen and (max-width: 1024px) {
+    .portfolio__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+}
+
+/* -------------- SMALL QUERISE (MEDIUM DEVICDES) --------------- */
+@media screen and (max-width: 600px) {
+    .portfolio__container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

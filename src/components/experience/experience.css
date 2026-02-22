@@ -1,0 +1,113 @@
+/* ================= EXPERIENCE LAYOUT ================= */
+
+.experience__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    cursor: default;
+}
+
+/* individual category box */
+.experience__box {
+    background: var(--color-bg-variant);
+    padding: 2.5rem 3rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.experience__box:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+}
+
+/* category title */
+.experience__box h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+/* skills grid */
+.experience__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.6rem;
+    column-gap: 2.2rem;
+}
+
+/* ================= SKILL ITEM ================= */
+
+.experience__details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.experience__details:hover {
+    transform: translateX(6px);
+}
+
+.experience__details h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ================= ICON WRAPPER ================= */
+
+.skill__icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.35s ease, background 0.35s ease;
+}
+
+/* actual logo inside wrapper */
+.skill__icon img {
+    max-width: 40px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* hover effect */
+.experience__details:hover .skill__icon {
+    transform: scale(1.15);
+    background: var(--color-white);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* tablets */
+@media screen and (max-width: 1024px) {
+    .experience__container {
+        grid-template-columns: 1fr;
+    }
+
+    .experience__box {
+        width: 80%;
+        margin: auto;
+        padding: 2.2rem;
+    }
+}
+
+/* mobiles */
+@media screen and (max-width: 600px) {
+    .experience__box {
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .experience__content {
+        grid-template-columns: 1fr;
+    }
+}
