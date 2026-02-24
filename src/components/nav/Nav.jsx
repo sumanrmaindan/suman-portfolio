@@ -59,7 +59,7 @@ const Nav = () => {
       }
       
     }, {
-      threshold: [0.2, 0.4, 0.6, 0.8],
+      threshold: 0.5,
       rootMargin: "-20% 0px -20% 0px"
     })
     
