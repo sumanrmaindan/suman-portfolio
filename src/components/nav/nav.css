@@ -25,9 +25,34 @@ nav a {
 }
 
 nav a:hover {
-    background: rgb(86, 18, 68);
+    background: rgb(77, 181, 255, 0.2);
 }
 nav a.active {
     background: var(--color-primary);
     color: var(--color-bg);
+}
+
+
+/* -------------- MEDIA QUERISE (MEDIUM DEVICDES) --------------- */
+
+@media screen and (max-width: 1024px) {
+    nav a:hover {
+    background: none;
+}
+nav a.active {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+}
+
+/* -------------- SMALL QUERISE (MEDIUM DEVICDES) --------------- */
+/* 📱 MOBILE FIX */
+@media screen and (max-width: 600px) {
+        nav a:hover {
+    background: none;
+}
+nav a.active {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
 }

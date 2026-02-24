@@ -51,7 +51,7 @@ const About = () => {
       <a href="#contact" className='btn btn-primary'>Let's Talk</a>
 </div>
       {/* CARDS AT BOTTOM */}
-      <div className="about__cards"> 
+      <div className="about__cards">  
 
         <article className='about__card' onClick={() => setShowEducation(true)}>
           <FaUserGraduate className='about__icon'/>
@@ -91,7 +91,9 @@ const About = () => {
             <h2>My Education</h2>
 
             <div className="edu__item">
-              <img src={mite} alt="MITE Logo" className='edu__logo' />
+              <div className="edu__logo">
+              <img src={mite} alt="MITE Logo" />
+              </div>
               <div>
               <h3>Master of Computer Applications (MCA)</h3>
               <a href="https://mite.ac.in/" target="_blank" className="college__name">Mangalore Institute of Technology & Engineering</a>
@@ -100,7 +102,9 @@ const About = () => {
             </div>
 
             <div className="edu__item">
-              <img src={Milagres} alt="Milagres Logo" className='edu__logo'/>
+              <div className="edu__logo">
+              <img src={Milagres} alt="Milagres Logo" />
+              </div>
               <div>
               <h3>Bachelor of Computer Applications (BCA)</h3>
               <a href="https://milagrescollegekallianpur.edu.in/" target="_blank" className="college__name">Milagres College Kallianpur</a>

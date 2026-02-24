@@ -50,7 +50,7 @@ const Footer = () => {
 
       <div className="footer__bottom">
         <div className="footer__bottom-inner">
-        <small>© {new Date().getFullYear()} Suman. All rights reserved.</small>
+        {/* <small>© {new Date().getFullYear()} Suman. All rights reserved.</small> */}
         <button className="scroll__top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}><FaArrowUp size={20}/></button>
         </div>
       </div>

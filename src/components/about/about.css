@@ -98,92 +98,117 @@
 
 /* ===== EDUCATION MODAL ===== */
 
-.edu__modal{
+.edu__modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
 }
 
-.edu__modal-content{
+.edu__modal-content {
   background: var(--color-bg-variant);
-  padding: 3rem;
-  border-radius: 2rem;
-  width: 600px;
-  max-width: 90%;
+  padding: 2.5rem 2.5rem;
+  border-radius: 1.8rem;
+  width: 520px;
+  max-width: 92%;
   position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.edu__modal-content h2 {
   text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
 }
 
-.edu__modal-content h2{
-  margin-bottom: 2rem;
-}
-
-.edu__item{
-  margin-bottom: 1.5rem;
-}
-
-.edu__item h3{
-  color: var(--color-primary);
-}
-
-.edu__close{
+.edu__close {
   position: absolute;
-  top: 15px;
-  right: 20px;
-  cursor: pointer;
+  top: 18px;
+  right: 22px;
   font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--color-light);
+  transition: 0.3s ease;
 }
 
-.edu__item{
+.edu__close:hover {
+  color: var(--color-white);
+}
+
+/* ===== EDUCATION ITEM ===== */
+
+.edu__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  transition: 0.3s ease;
+}
+
+.edu__item:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-3px);
+}
+
+.edu__item + .edu__item {
+  margin-top: 1.2rem;
+}
+
+/* LOGO */
+
+.edu__logo {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 0.8rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  text-align: left;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.edu__logo{
-  width: 65px;
-  height: 55px;
+.edu__logo img {
+  max-width: 85%;
+  max-height: 85%;
   object-fit: contain;
-  border-radius: 0.5rem;
-  background: white;
-  padding: 5px;
-}
-.edu__item:hover{
-  transform: translateY(-4px);
-  transition: 0.4s;
 }
 
-.cgpa{
+/* TEXT */
+
+.edu__item h3 {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
   color: var(--color-primary);
-  font-weight: 600;
-  background: rgba(124, 6, 6, 0.21);
-  padding: 4px 10px;
-  border-radius: 0.5rem;
-  display: inline-block;
-  margin-top: 5px;
 }
 
-.college__name{
+.college__name {
   display: block;
+  font-size: 0.9rem;
   color: var(--color-light);
+  margin-bottom: 0.6rem;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-.college__name:hover{
+.college__name:hover {
   color: var(--color-white);
-  text-decoration: underline;
 }
 
-
+.cgpa {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(77,181,255,0.15);
+  padding: 6px 12px;
+  border-radius: 0.6rem;
+  display: inline-block;
+  color: var(--color-primary);
+}
 
 
 /* -------------- MEDIA QUERISE (MEDIUM DEVICDES) --------------- */
@@ -274,6 +299,59 @@
     width: 92%;
     margin: 0 auto;
   }
+
+  .edu__modal-content {
+    width: 85%;
+    padding: 2.2rem 2rem;
+    border-radius: 1.6rem;
+  }
+
+  .edu__item {
+    gap: 1.2rem;
+    padding: 1.1rem;
+  }
+
+  .edu__logo {
+    width: 58px;
+    height: 58px;
+  }
+
+  .edu__item h3 {
+    font-size: 1rem;
+  }
+
+  .college__name {
+    font-size: 0.9rem;
+  }
+
+  .cgpa {
+    font-size: 0.8rem;
+  }
+
+  /* ===== MOBILE EDUCATION TEXT IMPROVEMENT ===== */
+
+.edu__item h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.7;      /* more breathing space */
+  margin-bottom: 0.6rem;
+  color: var(--color-primary);
+}
+
+.college__name {
+  font-size: 0.8rem;
+  line-height: 1.6;      /* smoother wrapping */
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 1rem;   /* more gap before CGPA */
+}
+
+.cgpa {
+  font-size: 0.6rem;
+  padding: 3px 16px;     /* slightly wider */
+  border-radius: 0.8rem;
+  letter-spacing: 0.4px;
+}
+
 
 }
 
